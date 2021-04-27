@@ -6,11 +6,11 @@ public class ClassNameExampleTest {
     public static void main(String args[]) {
         for (String className: validClasses) {
             boolean isValid = classNameExample.validate(className);
-            System.out.println("Email is " + className +" is valid: "+ isValid);
+            System.out.println("Classname is " + className +" is valid: "+ isValid);
         }
         for (String className : invalidClasses) {
             boolean isValid = classNameExample.validate(className);
-            System.out.println("Email is " + className +" is valid: "+ isValid);
+            System.out.println("Classname is " + className +" is valid: "+ isValid);
         }
     }
 
