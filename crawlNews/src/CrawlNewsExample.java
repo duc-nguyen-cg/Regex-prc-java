@@ -16,10 +16,15 @@ public class CrawlNewsExample {
             //close scanner
             scanner.close();
             //remove all new line
+            content.replace("</html>", "");
             content = content.replaceAll("\\n+", "");
-
+            content = content.replaceAll( "\\(Dân trí\\)&nbsp;-", "");
+            content = content.replaceAll("href=\"(.*?)\"", "");
+            content = content.replaceAll("&quot;", "");
             //regex
-            Pattern pattern = Pattern.compile("\">(.*?)</a>");
+//            Pattern pattern = Pattern.compile("\">(.*?)</a>");
+
+            Pattern pattern = Pattern.compile("title=\"(.*?)\">");
             Matcher matcher = pattern.matcher(content);
             while (matcher.find()){
                 System.out.println(matcher.group(1)+"\n");
